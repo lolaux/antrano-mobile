@@ -80,3 +80,19 @@ function getHeaders(noAuthorization = false) {
     }
     return BASE_HEADERS;
 }
+
+export function getUnansweredQuestions(userId: string) {
+    return get('user/' + userId + '/unansweredQuestions');
+}
+
+export function getFavorites(userId: string) {
+    return get('user/' + userId + '/favorites');
+}
+
+export function getAnswers(userId: string) {
+    return get('user/' + userId + '/answers');
+}
+
+export function addFavorite(userId: string, listingId: string) {
+    return post('user/' + userId + '/favorite' + listingId);
+}
